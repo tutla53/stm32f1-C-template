@@ -46,6 +46,7 @@ static uint16_t read_adc(uint8_t channel) {
 }
 
 static void gpio_setup(void) {
+	rcc_clock_setup_in_hse_8mhz_out_72mhz();
 	rcc_periph_clock_enable(RCC_GPIOA);
 	rcc_periph_clock_enable(RCC_GPIOC);
 	gpio_set_mode(GPIOC,GPIO_MODE_OUTPUT_50_MHZ,GPIO_CNF_OUTPUT_PUSHPULL,GPIO13);
