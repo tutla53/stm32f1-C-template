@@ -35,12 +35,25 @@
   
 ### Build and Run the First Program
 #### Adding the Build Target
-Move to the Directory `stm32f103c8t6` and run `make`
+- Let say `~` is the top level of this repository
+- Move to the Directory `~/stm32f103c8t6` and then run `make`
+  ```bash
+  $ cd ~/stm32f103c8t6
+  $ make
+  ```
 
 #### Build the Project
-Move to the Directory `remote-control` and run `make`
+- Move to the Directory `!~/remote-control` and the run `make`
+  ```bash
+  $ cd ~/remote-control
+  $ make
+  ```
 
 #### Run the Example from ve3wwg
-- You can run the example from the embassy-rs which located at `stm32f103c8t6/rtos/`
+- You can run the example from the embassy-rs which located at `~/stm32f103c8t6/rtos/`
 - Select and move to the example project e.g. `blinky` then run `make`
+  ```bash
+  $ cd ~/stm32f103c8t6/rtos/blinky
+  $ make
+  ```
 
