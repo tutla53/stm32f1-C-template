@@ -1,2 +1,46 @@
-# stm32f1-C-template
-STM32F1 + C+ FreeRTOS + libopencm3
+# STM32F103C8T6 (Blue Pill) + libopencm3 + FreeRTOS
+***
+
+### Module
+- [STM32F103C8T6 Framework](https://github.com/tutla53/stm32f1-c-template.git) forked from [Warren Gay](https://github.com/ve3wwg)
+- [libopencm3](https://github.com/libopencm3/libopencm3.git) branch Master
+- [FreeRTOS](https://github.com/FreeRTOS/FreeRTOS-LTS.git) branch 202012-LTS
+- ST Link Tools
+  ```bash
+  sudo apt install stlink-tools
+  ```
+- Cross Compiler Toolchain &#8594; arm-none-eabi-gcc
+  ```bash
+  sudo apt install gcc-arm-none-eabi
+  ```
+***
+
+## Getting Started:
+### Cloning the Repository
+- `git clone` this repository with this command:
+    ```bash
+    git clone --recurse-submodules https://github.com/tutla53/stm32f1-c-template.git 
+    ```
+- If you didn't use a `--recursive` git clone, then you need to make
+  sure that `embassy-rs` is fetched now. From the top level apply
+  one of:
+  ```bash
+  git submodule update --init --recursive   # First time
+  git submodule update --recursive          # Subsequent
+  ```
+- Update the submodules to the latest commit on it's tracked branch:
+  ```bash
+  git submodule update --remote --recursive
+  ```
+  
+### Build and Run the First Program
+#### Adding the Build Target
+Move to the Directory `stm32f103c8t6` and run `make`
+
+#### Build the Project
+Move to the Directory `remote-control` and run `make`
+
+#### Run the Example from ve3wwg
+- You can run the example from the embassy-rs which located at `stm32f103c8t6/rtos/`
+- Select and move to the example project e.g. `blinky` then run `make`
+
