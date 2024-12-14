@@ -94,15 +94,15 @@ static void main_task (void *args) {
 		}
 
         if (body_val > 3500) {
-			std_printf("a");
-			gpio_clear(GPIOC,GPIO13);
-		}
-        else if (body_val < 500) {
 			std_printf("d");
 			gpio_clear(GPIOC,GPIO13);
 		}
+        else if (body_val < 500) {
+			std_printf("a");
+			gpio_clear(GPIOC,GPIO13);
+		}
 		
-		vTaskDelay(pdMS_TO_TICKS(100));
+		vTaskDelay(pdMS_TO_TICKS(200));
 		gpio_set(GPIOC,GPIO13);
 	}
 }
