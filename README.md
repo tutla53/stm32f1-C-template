@@ -13,6 +13,10 @@
   ```bash
   sudo apt install gcc-arm-none-eabi
   ```
+- Python
+  ```bash
+  sudo apt install python-is-python3
+  ```
 ***
 
 ## Getting Started:
