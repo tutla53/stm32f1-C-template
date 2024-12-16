@@ -47,9 +47,9 @@
   ```
 
 #### Build the Project
-- Move to the Directory `!~/remote-control` and the run `make`
+- Move to the Directory `~/template` and the run `make`
   ```bash
-  $ cd ~/remote-control
+  $ cd ~/template
   $ make
   ```
 
