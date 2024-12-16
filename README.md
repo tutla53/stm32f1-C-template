@@ -9,7 +9,7 @@
   ```bash
   sudo apt install stlink-tools
   ```
-- Cross Compiler Toolchain &#8594; arm-none-eabi-gcc
+- GCC Cross Compiler Toolchain
   ```bash
   sudo apt install gcc-arm-none-eabi
   ```
