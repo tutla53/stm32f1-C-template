@@ -29,12 +29,12 @@
   sure that `embassy-rs` is fetched now. From the top level apply
   one of:
   ```bash
-  git submodule update --init --recursive   # First time
-  git submodule update --recursive          # Subsequent
+  git submodule update --init --recursive --remote  # First time
+  git submodule update --recursive --remote         # Subsequent
   ```
 - Update the submodules to the latest commit on it's tracked branch:
   ```bash
-  git submodule update --remote --recursive
+  git submodule update --recursive --remote 
   ```
   
 ### Build and Run the First Program
