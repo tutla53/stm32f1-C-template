@@ -21,6 +21,7 @@ Development of  2 d.o.f Robot
 
 #define mainECHO_TASK_PRIORITY (tskIDLE_PRIORITY + 1)
 #define USE_USB		0		// Set to 1 for USB
+#define UART1		1		// UART 1
 
 /*Global Variable*/
 extern void vApplicationStackOverflowHook(xTaskHandle *pxTask,signed portCHAR *pcTaskName);
@@ -85,20 +86,20 @@ static void main_task (void *args) {
 		int body_val = read_adc(1);
 			
         if (head_val > 3500) {
-			std_printf("w");
+			uart1_putc('w');
 			gpio_clear(GPIOC,GPIO13);
 		}
         else if (head_val < 500) {
-			std_printf("s");
+			uart1_putc('s');
 			gpio_clear(GPIOC,GPIO13);
 		}
 
         if (body_val > 3500) {
-			std_printf("d");
+			uart1_putc('d');
 			gpio_clear(GPIOC,GPIO13);
 		}
         else if (body_val < 500) {
-			std_printf("a");
+			uart1_putc('a');
 			gpio_clear(GPIOC,GPIO13);
 		}
 		
@@ -130,8 +131,8 @@ int main(void) {
 			GPIO_CNF_OUTPUT_ALTFN_PUSHPULL,GPIO9|GPIO11);
 		gpio_set_mode(GPIOA,GPIO_MODE_INPUT,
 			GPIO_CNF_INPUT_FLOAT,GPIO10|GPIO12);
-		open_uart(1,9600,"8N1","rw",1,1);					// UART1 with RTS/CTS flow control
-		std_set_device(mcu_uart1);							// Use UART1 for std I/O
+		open_uart(UART1, 9600, "8N1", "w", 0, 0);					// UART1
+		//std_set_device(mcu_uart1);							// Use UART1 for std I/O
 	#endif
 
 	/*Scheduling and start the program*/
